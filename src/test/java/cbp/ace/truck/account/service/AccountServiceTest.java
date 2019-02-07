@@ -1,10 +1,8 @@
-package cbp.ace.truck.account;
+package cbp.ace.truck.account.service;
 
 import cbp.ace.truck.account.dto.AccountDto;
 import cbp.ace.truck.account.model.Account;
 import cbp.ace.truck.account.repository.AccountRepository;
-import cbp.ace.truck.account.service.AccountService;
-import cbp.ace.truck.account.service.AccountServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,8 +16,8 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = AccountServiceUnitTest.class)
-public class AccountServiceUnitTest {
+@ContextConfiguration(classes = AccountServiceTest.class)
+public class AccountServiceTest {
     @Autowired
     private AccountService service;
 

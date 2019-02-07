@@ -1,6 +1,5 @@
-package cbp.ace.truck.account;
+package cbp.ace.truck.account.controller;
 
-import cbp.ace.truck.account.controller.AccountController;
 import cbp.ace.truck.account.dto.AccountDto;
 import cbp.ace.truck.account.exceptions.DataNotFoundException;
 import cbp.ace.truck.account.exceptions.ServerException;
@@ -17,8 +16,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.Optional;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = AccountControllerUnitTest.class)
-public class AccountControllerUnitTest {
+@ContextConfiguration(classes = AccountControllerTest.class)
+public class AccountControllerTest {
 
     @Autowired
     private AccountController accountController;

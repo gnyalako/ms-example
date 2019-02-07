@@ -13,17 +13,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class AccountIntegrationTest {
+public class ApplicationTest {
 
     @LocalServerPort
     private int port;
 
-    TestRestTemplate restTemplate = new TestRestTemplate();
-
-    HttpHeaders headers = new HttpHeaders();
-
     @Test
     public void testGetAccount(){
+        TestRestTemplate restTemplate = new TestRestTemplate();
+        HttpHeaders headers = new HttpHeaders();
         String url = "http://localhost:" + port + "/accounts/1";
         AccountDto account = restTemplate.getForObject( url, AccountDto.class );
         Assert.assertNotNull(account);
