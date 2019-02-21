@@ -2,6 +2,16 @@ spring:
   application:
     name: mstruckaccount
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+---
+
+spring:
+  profiles: local-h2
   datasource:
     url: jdbc:h2:mem:cbp;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     platform: h2
@@ -17,7 +27,6 @@ spring:
           show_sql: true
           use_sql_comments: true
           format_sql: true
-
   ###
   #   H2 Settings
   ###
@@ -32,9 +41,7 @@ spring:
 server:
   port: 9000
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,metrics
+
+---
+
 
